@@ -14,8 +14,33 @@ const convertToDiscussion = (obj) => {
   discussionAnswered.className = "discussion__answered";
 
   // TODO: 객체 하나에 담긴 정보를 DOM에 적절히 넣어주세요.
+  //1. avatarWrapper - 아바타 이미지 영역 div.discussion__avatar--wrapper
+ //innerHTML=`<img src="${obj.avatarUrl}" alt="avatar of ${obj.author}">`;
+  let elAvatarImg=document.createElement('img');
+  elAvatarImg.setAttribute('src',obj.avatarUrl);
+  elAvatarImg.setAttribute('alt',`avatar of ${obj.author}`);
+  avatarWrapper.append(elAvatarImg);
+  
+  //2. discussionContent - 내용 영역 div.discussion__content
+  //innerHTML=`<h2 class="discussion__title"><a href="${obj.url}">${obj.title}</a></h2>`;
+  let elTitle=document.createElement('h2');
+  let elTitleLink=document.createElement('a');
+  elTitleLink.setAttribute('href',obj.url);
+  elTitleLink.textContent=obj.title;
+  elTitle.appendChild(elTitleLink);
+  discussionContent.append(elTitle);
+  //`<div class="discussion__information">${obj.author} / ${obj.createdAt}</div>`;
+  let elInfo=document.createElement('div');
+  elInfo.className="discussion__information";
+  elInfo.textContent=`${obj.author} / ${obj.createdAt}`;
+  discussionContent.append(elInfo);
 
-
+  //3. 질문여부 삽입
+  //<p>☑</p>
+  let elAnswerChk=document.createElement('p');
+  elAnswerChk.textContent='☑';
+  discussionAnswered.append(elAnswerChk);
+  
 
   li.append(avatarWrapper, discussionContent, discussionAnswered);
   return li;
