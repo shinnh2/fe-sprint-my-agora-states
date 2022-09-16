@@ -133,7 +133,7 @@ const pagination=(maximumList)=>{//한 페이지 최대 갯수
   }
 };
 //한 페이지 최대 리스트 10개
-let render10Page=pagination(5);
+let render10Page=pagination(10);
 
 //pagination 클릭시 페이지 나타나도록
 //초기화
@@ -149,3 +149,17 @@ for(let i of elpageBtn){
 //초기설정
 render10Page(1);
 elpageBtn[0].classList.add('active');
+
+//기타. to top 버튼
+const topBtn=document.querySelector('.top_button');
+window.addEventListener('scroll',(event)=>{
+  event.preventDefault();
+  if(window.scrollY>=200){
+    topBtn.classList.add('show');
+  }else{
+    topBtn.classList.remove('show');
+  }
+});
+topBtn.addEventListener('click',(event)=>{
+  window.scrollTo({ top:0, behavior:'smooth'});
+});

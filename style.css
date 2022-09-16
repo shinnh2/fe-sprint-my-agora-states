@@ -203,17 +203,23 @@ textarea{
 /* top button */
 .top_button{
     position: fixed;
-    bottom: 64px;
+    bottom: -56px;
     right: calc((100% - 540px)/2 + 16px);    
     font-family: 'Noto Sans KR';
     display: block;
     width: 56px;
     height: 56px;
-    background: var(--purple-200);
-    color: var(--purple-700);
+    background: var(--black-high-em);
+    color: var(--white);
     font-weight: 500;
     border-radius: 50%;
     box-shadow: var(--shadow-btn-float);
+    opacity: 0;
+    transition: all 0.3s;
+}
+.top_button.show{
+    opacity: 1;
+    bottom:64px;
 }
 
 @media screen and (max-width: 600px) {
