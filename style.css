@@ -168,3 +168,12 @@ textarea{
 .material-icons.checked{
     color:var(--purple-500);
 }
+
+@media screen and (max-width: 600px) {
+    body {
+        padding:0;
+    }
+    main{
+        width:100%;
+    }
+}
