@@ -7,7 +7,7 @@ const localData = localStorage.getItem("agoraStatesDiscussions");
 if (localData) {
 	data = JSON.parse(localData);
 } else {
-	data = agoraStatesDiscussions.slice();
+	data = agoraStatesDiscussions.slice();//확인
 	//기존에 작성했던 코드의 agoraStatesDiscussions 데이터는 모두 data로 대체헤애 한다.
 }
 
