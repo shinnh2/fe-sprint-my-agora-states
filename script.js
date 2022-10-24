@@ -1,6 +1,6 @@
 // index.html을 열어서 agoraStatesDiscussions 배열 요소를 확인하세요.
 //console.log(agoraStatesDiscussions);
-//6-1. 로컬 스토리지 저장을 위한 초기 데이터 설정
+//6-1. 로컬 스토리지 저장을 위한 초기 데이터 설정 - 완료
 //원본 데이터는 복사해서 사용해야 하며 로컬 데이터가 있다면 로컬 데이터를 추가하여 사용한다.
 let data;
 const localData = localStorage.getItem("agoraStatesDiscussions");
